@@ -12,53 +12,58 @@ class Album(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
     directorName = models.CharField(max_length=250, db_column='director_name')
-    img_location = models.FilePathField(path=images_path)
+    imgLocation = models.FilePathField(path=images_path, db_column="img_location")
 
 class UserRole(models.Model):
+    class Meta:
+        db_table = 'user_roles'
     id = models.AutoField(primary_key=True)
     LABEL_TYPE_CHOICES = [
         ('admin', 'Administrator'),
         ('moderator', 'Moderator'),
         ('collaborator', 'Collaborator'),
     ]
-    label_type = models.CharField(
-        max_length=2,
+    lableType = models.CharField(
+        max_length=50,
         choices=LABEL_TYPE_CHOICES,
         default='collaborator',
+        db_column='lable_type'
     )
 
 class Artist(models.Model):
+    class Meta:
+        db_table = 'artists'
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
-    img_location = models.FilePathField(path=images_path)
+    imgLocation = models.FilePathField(path=images_path, db_column="img_location")
     ARTIST_TYPE_CHOICES = [
         ('singer', 'Singer'),
         ('writer', 'Writer'),
         ('composer', 'Conposer'),
     ]
-    artist_type = models.CharField(
-        max_length=2,
-        choices=ARTIST_TYPE_CHOICES
+    artistType = models.CharField(
+        max_length=50,
+        choices=ARTIST_TYPE_CHOICES,
+        db_column='artist_type'
     )
     description = models.TextField
 
 class User(models.Model):
+    class Meta:
+        db_table = 'users'
     id = models.AutoField(primary_key=True)
     email = models.CharField(max_length=100)
     passwd = models.CharField(max_length=20)
-    full_name = models.CharField(max_length=250)
-    role_id = models.ForeignKey(UserRole, on_delete=models.CASCADE)
-
-class LyricContent(models.Model):
-    id = models.AutoField(primary_key=True)
-    content = models.TextField
+    fullName = models.CharField(max_length=250, db_column='full_name')
+    roleId = models.ForeignKey(UserRole, blank=True, null=True, on_delete=models.SET_NULL, db_column='role_id')
 
 class Lyric(models.Model):
+    class Meta:
+        db_table = 'lyrics'
     id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    lyric_content_id = models.ForeignKey(LyricContent, on_delete=models.CASCADE)
-    album_id = models.ForeignKey(Album, on_delete=models.CASCADE)
-    music_company = models.CharField(max_length=250)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_id')
+    albumId = models.ForeignKey(Album, on_delete=models.CASCADE, db_column='album_id')
+    musicCompany = models.CharField(max_length=250, db_column='music_company')
     STATUS_CHOICES = [
         ('draft', 'draft'),
         ('under_review', 'under_review'),
@@ -67,20 +72,25 @@ class Lyric(models.Model):
         ('declined', 'declined'),
     ]
     status = models.CharField(
-        max_length=2,
+        max_length=50,
         choices=STATUS_CHOICES,
         default='draft'
     )
     genere = models.CharField(max_length=250)
     tags = models.CharField(max_length=11)
+    content = models.TextField
 
-class artist_songs(models.Model):
-    lyric_id = models.ForeignKey(Lyric, on_delete=models.CASCADE)
-    artist_id = models.ForeignKey(Artist, on_delete=models.CASCADE)
+class ArtistSong(models.Model):
+    class Meta:
+        db_table = 'artist_songs'
+    lyricId = models.ForeignKey(Lyric, on_delete=models.CASCADE, db_column='lyric_id')
+    artistId = models.ForeignKey(Artist, on_delete=models.DO_NOTHING, db_column='artist_id')
 
-class lyrics_events(models.Model):
+class LyricEvent(models.Model):
+    class Meta:
+        db_table = 'lyrics_events'
     id = models.AutoField(primary_key=True)
-    lyric_id = models.ForeignKey(Lyric, on_delete=models.CASCADE)
+    lyricId = models.ForeignKey(Lyric, on_delete=models.CASCADE, db_column='lyric_id')
     type
     TYPE_CHOICES = [
         ('created', 'created'),
@@ -89,10 +99,10 @@ class lyrics_events(models.Model):
         ('published', 'published'),
     ]
     type = models.CharField(
-        max_length=2,
+        max_length=50,
         choices=TYPE_CHOICES,
         default='created'
     )
-    ocurred_at = models.DateTimeField
-    user_email =  models.CharField(max_length=100)
+    ocurredAt = models.DateTimeField(db_column='ocurred_at')
+    userEmail =  models.CharField(max_length=100, db_column='user_email')
     content = models.TextField
