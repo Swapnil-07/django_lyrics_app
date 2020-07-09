@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from . import google_login
+from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
@@ -17,3 +18,8 @@ def artist(request, id):
     artists = {1:'Arijit Singh', 2:'Shreya Ghoshal', 3:'Sonu Nigam'}
     return render(request, "artist.htm", {'artistName':artists[id]})
 
+def login(request):
+    print(request.data);
+    google_login.validate(request);
+    artists = {1:'Arijit Singh', 2:'Shreya Ghoshal', 3:'Sonu Nigam'}
+    return render(request, "artist.htm", {'artistName':artists[id]})
