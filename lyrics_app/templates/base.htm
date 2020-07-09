@@ -31,7 +31,7 @@
                 <h3>Lyrics App</h3>
                 <strong>LA</strong>
             </div>
-    
+            
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -114,11 +114,16 @@
                     </button>
 
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-dark  my-2 my-sm-0" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark  my-sm-0" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
                     </form>
+                    
                 </div>
             </nav>
 
@@ -128,6 +133,60 @@
                 {% block body %} {% endblock %}
             </div>
 
+            <!--Footer-->
+            <footer class="" style="background-color: black;">
+                <div class="container ">
+                  <div class="row py-4">
+                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+                      <p class="font-italic text-muted">Lyrics App.. Best Lyrics App for all the Songs Collection</p>
+                      <ul class="list-inline mt-4">
+                        <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                      <h6 class="text-uppercase font-weight-bold mb-4">Site</h6>
+                      <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="#" class="text-muted">Songs</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Albums</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Artists</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Our Blog</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                      <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+                      <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Our Contributors</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-lg-0">
+                      <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+                      <p class="text-muted mb-4">For Our News Letter Regarding new Albums</p>
+                      <div class="p-1 rounded border">
+                        <div class="input-group">
+                          <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                          <div class="input-group-append">
+                            <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+                <!-- Copyrights -->
+                <div class="py-2" style="background-color: #EA57A3;">
+                  <div class="container text-center">
+                    <p class="mb-0 py-2 text-light">© 2020 Lyrics App All rights reserved.</p>
+                  </div>
+                </div>
+              </footer>
         </div>
     </div>
 
