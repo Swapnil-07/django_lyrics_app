@@ -3,7 +3,7 @@ from django.conf import settings
 from django.db import models
 
 def images_path():
-    return os.path.join(settings.LOCAL_FILE_DIR, 'images')
+    return os.path.join(settings.STATICFILES_DIRS[0], 'images')
 
 # Create your models here.
 class Album(models.Model):
@@ -12,7 +12,7 @@ class Album(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
     directorName = models.CharField(max_length=250, db_column='director_name')
-    imgLocation = models.FilePathField(path=images_path, db_column="img_location")
+    imgLocation = models.ImageField(upload_to='static/images', null=True, db_column="img_location")
 
 class UserRole(models.Model):
     class Meta:
@@ -35,7 +35,7 @@ class Artist(models.Model):
         db_table = 'artists'
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
-    imgLocation = models.FilePathField(path=images_path, db_column="img_location")
+    imgLocation = models.ImageField(upload_to='static/images', null=True, db_column="img_location")
     ARTIST_TYPE_CHOICES = [
         ('singer', 'Singer'),
         ('writer', 'Writer'),
