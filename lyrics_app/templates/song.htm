@@ -1,10 +1,39 @@
 {% extends 'base.htm' %}
 {% block title%} Lyrics - Best Application {% endblock %}
 {% block css %}
-
+    <!-- @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .div-hide{
+            display : none;
+        } -->
 {% endblock %}
 
 {% block body %}
+
+{% load static %}
+<div class="col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="col-sm-5 col-xs-12 p-0 ">
+            <div class="" style="height: 250px;">
+                <img src="{% static 'images/11.jpg' %}" class="d-block w-100 rounded" alt="Stage Image">
+            </div>
+            <div class="bg-warning div-hide" id="dv_info" style="height: 400px;  ">
+                Song Information Div
+            </div>
+        </div>
+        <div class="col-sm-7 col-xs-12" id="dv_lyrics" style="background-color: hotpink;">
+            <div class="text-center my-4 bg-light">
+                <h3>
+                    {{songName}}
+                </h3>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
 
 <div  class="text-center my-4">
     <h3>This is Song Page</h3>
@@ -18,4 +47,5 @@
 {% endblock %}
 
 {% block js %}
+
 {% endblock %}
