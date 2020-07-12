@@ -1,2 +1,2 @@
 release: python lyrics_app/manage.py migrate
-web: python lyrics_app/manage.py runserver django-lyrics-app.herokuapp.com:$PORT
+web: python lyrics_app/manage.py runserver $web_url:$PORT
