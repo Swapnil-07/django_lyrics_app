@@ -33,292 +33,134 @@
 </head>
 
 <body>
-    <div class="container-fluid p-0">
-        <div id="dv_top_strip" class="col-sm-12 col-xs-12" style="height: 5vh; background-color: black;">
-        </div>
-        <div class="wrapper">
-            <!-- Sidebar  -->
-            <nav id="sidebar" class="active">
-                <div class="sidebar-header">
-                    <h3>Lyrics App</h3>
-                    <strong>LA</strong>
-                </div>
-                
-                <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <i class="fas fa-home"></i>
-                            Home
-                        </a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-briefcase"></i>
-                            About
-                        </a>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                            <i class="fas fa-copy"></i>
-                            Pages
-                        </a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-image"></i>
-                            Portfolio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-question"></i>
-                            FAQ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fas fa-paper-plane"></i>
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-                <ul class="list-unstyled CTAs">
-                    <li>
-                        <a href="#" class="download">Download Lyrics</a>
-                    </li>
-                    <li>
-                        <a href="#" class="article">Back to article</a>
-                    </li>
-                </ul>
-                
-        
-            </nav>
-        
-            <!-- Page Content  -->
-            <div id="content" class="p-0">
-        
-                <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#117b9b">
-                    <div class="container-fluid">
-        
-                        <button type="button" id="sidebarCollapse" class="btn btn-dark">
-                            <i class="fas fa-align-left"></i>
-                            <span></span>
-                        </button>
-    
-                        <form class="form-inline my-2 my-lg-0">
-                            <div class="input-group">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-dark  my-sm-0" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                        
-                    </div>
-                </nav>
-    
-                <!-- Page Below Search Bar -->
-                <div class="container-fluid p-2">
-                    <div class="row">
-                        <div class="col-sm-9 col-xs-12">
-                            {% block body %} {% endblock %}
-                        </div>
-                        <div class="col-sm-3 col-xs-12">
-                            <h2>Your Ads Comes Here</h2>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-    
-                <!--Footer-->
-                <footer class="" style="background-color: black;">
-                    <div class="container ">
-                      <div class="row py-4">
-                        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
-                          <p class="font-italic text-muted">Lyrics App.. Best Lyrics App for all the Songs Collection</p>
-                          <ul class="list-inline mt-4">
-                            <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                          <h6 class="text-uppercase font-weight-bold mb-4">Site</h6>
-                          <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><a href="#" class="text-muted">Songs</a></li>
-                            <li class="mb-2"><a href="#" class="text-muted">Albums</a></li>
-                            <li class="mb-2"><a href="#" class="text-muted">Artists</a></li>
-                            <li class="mb-2"><a href="#" class="text-muted">Our Blog</a></li>
-                          </ul>
-                        </div>
-                        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                          <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
-                          <ul class="list-unstyled mb-0">
-                            <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
-                            <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
-                            <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
-                            <li class="mb-2"><a href="#" class="text-muted">Our Contributors</a></li>
-                          </ul>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-lg-0">
-                          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
-                          <p class="text-muted mb-4">For Our News Letter Regarding new Albums</p>
-                          <div class="p-1 rounded border">
-                            <div class="input-group">
-                              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-                              <div class="input-group-append">
-                                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
-                              </div>
-                            </div>
-                          </div>
-<div id="dv_top_strip" class="col-sm-12 col-xs-12" style="height: 5vh; background-color: black;">
-</div>
-<div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar" class="active">
-        <div class="sidebar-header">
-            <h3>Lyrics App</h3>
-            <strong>LA</strong>
-        </div>
-
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-home"></i>
-                    Home
-                </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-briefcase"></i>
-                    About
-                </a>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-copy"></i>
-                    Pages
-                </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-image"></i>
-                    Portfolio
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-question"></i>
-                    FAQ
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-paper-plane"></i>
-                    Contact
-                </a>
-            </li>
-        </ul>
-        <ul class="list-unstyled CTAs">
-            <li>
-                <a href="#" class="download">Download Lyrics</a>
-            </li>
-            <li>
-                <a href="#" class="article">Back to article</a>
-            </li>
-        </ul>
-
-
-    </nav>
-
-    <!-- Page Content  -->
-    <div id="content" class="p-0">
-
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#117b9b">
-            <div class="container-fluid">
-
-                <button type="button" id="sidebarCollapse" class="btn btn-dark">
-                    <i class="fas fa-align-left"></i>
-                    <span></span>
-
-                </button>
-
-                <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-dark  my-sm-0" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-
-                    </div>
-                </form>
+<div class="container-fluid p-0">
+    <div id="dv_top_strip" class="col-sm-12 col-xs-12" style="height: 5vh; background-color: black;">
+    </div>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <h3>Lyrics App</h3>
+                <strong>LA</strong>
             </div>
-            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-            <a class="btn btn-primary btn-sm active" role="button" href="#" onclick="signOut();">Sign out</a>
-            <a class="btn btn-primary btn-sm active" role="button" href="#" onclick="signInTest();">Sign InTest</a>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Pages
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-image"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="#" class="download">Download Lyrics</a>
+                </li>
+                <li>
+                    <a href="#" class="article">Back to article</a>
+                </li>
+            </ul>
+
 
         </nav>
-        <form id="gsignin-form" style="display:none">
-            <div class="row">
-                {% csrf_token %}
-                <input type="hidden" name="token_id" value=""/>
-                <input type="submit" class="btn btn-primary" value=""/>
-            </div>
-        </form>
-        <form>
-            <!-- Page Below Search Bar -->
 
-            <div class="col-sm-9 col-xs-12">
-                {% block body %} {% endblock %}
+        <!-- Page Content  -->
+        <div id="content" class="p-0">
+
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#117b9b">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <div class="input-group">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-dark  my-sm-0" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+                <a class="btn btn-primary btn-sm active" role="button" href="#" onclick="signOut();">Sign out</a>
+                <a class="btn btn-primary btn-sm active" role="button" href="#" onclick="signInTest();">Sign InTest</a>
+            </nav>
+            <form id="gsignin-form" style="display:none">
+                <div class="row">
+                    {% csrf_token %}
+                    <input type="hidden" name="token_id" value=""/>
+                    <input type="submit" class="btn btn-primary" value=""/>
+                </div>
+            </form>
+            <!-- Page Below Search Bar -->
+            <div class="container-fluid p-2">
+                <div class="row">
+                    <div class="col-sm-9 col-xs-12">
+                        {% block body %} {% endblock %}
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <h2>Your Ads Comes Here</h2>
+                    </div>
+                </div>
             </div>
+
 
             <!--Footer-->
             <footer class="" style="background-color: black;">
@@ -373,28 +215,18 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Copyrights -->
+                        <div class="py-2" style="background-color: #EA57A3;">
+                            <div class="container text-center">
+                                <p class="mb-0 py-2 text-light">© 2020 Lyrics App All rights reserved.</p>
+                            </div>
+                        </div>
                     </div>
-                
-                    <!-- Copyrights -->
-                    <div class="py-2" style="background-color: #EA57A3;">
-                      <div class="container text-center">
-                        <p class="mb-0 py-2 text-light">© 2020 Lyrics App All rights reserved.</p>
-                      </div>
-                    </div>
-                  </footer>
-            </div>
-        </div>
-    </div>
-    
                 </div>
 
-                <!-- Copyrights -->
-                <div class="py-2" style="background-color: #EA57A3;">
-                    <div class="container text-center">
-                        <p class="mb-0 py-2 text-light">© 2020 Lyrics App All rights reserved.</p>
-                    </div>
-                </div>
             </footer>
+        </div>
     </div>
 </div>
 
@@ -422,6 +254,7 @@ $(document).ready(function() {
         $('#sidebar').toggleClass('active');
     });
 });
+
 </script>
 </body>
 
