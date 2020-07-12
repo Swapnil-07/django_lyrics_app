@@ -1,1 +1,3 @@
-web: python lyrics_app/manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+web: python lyrics_app/manage.py runserver 8000
