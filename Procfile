@@ -1,1 +1,1 @@
-web: python lyrics_app/lyrics_app/asgi.py
+web: python lyrics_app.wsgi
