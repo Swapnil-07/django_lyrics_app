@@ -1,1 +1,1 @@
-web: python lyrics_app.wsgi
+web: python lyrics_app/manage.py runserver
