@@ -12,6 +12,5 @@ import os
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'lyrics_app.settings')
-os.environ.setdefault('IS_DEV', 'true')
 
 application = get_asgi_application()
