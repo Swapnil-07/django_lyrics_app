@@ -13,43 +13,58 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-    signInTest(id_token);
+    signInTest(id_token, profile);
 }
 
 
 
 function signOut() {
-alert("222");
+    alert("222");
     var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
+    auth2.signOut().then(function() {
+        console.log('User signed out.');
     });
-  }
+}
 
-function signInTest(id_token) {
+function signInTest(id_token, profile) {
     // The ID token you need to pass to your backend:
-//    var id_token = "token_jwt";
+    //    var id_token = "token_jwt";
     console.log("ID Token: " + id_token);
     $('input[name=token_id]').val(id_token);
-
     var serializedData = $("#gsignin-form").serialize();
-        // make POST ajax call
-        $.ajax({
-            type: 'POST',
-            url: '/login',
-            data: serializedData,
-            success: function (response) {
-                // on successfull creating object
-                // 1. clear the form.
-                $("#friend-form").trigger('reset');
-                // 2. focus to nickname input
-                $("#id_nick_name").focus();
 
-                // display the newly friend to table.
-                var instance = JSON.parse(response["instance"]);
-                var fields = instance[0]["fields"];
-                $("#my_friends tbody").prepend(
-                    `<tr>
+    if (typeof profile !== 'undefined') {
+        var params = {};
+        params["id"] = profile.getId(); // Don't send this directly to your server!
+        params["full_name"] = profile.getName();
+        params["first_name"] = profile.getGivenName();
+        params["family_name"] = profile.getFamilyName();
+        params["img_url"] = profile.getImageUrl();
+        params["email"] = profile.getEmail();
+        serializedData = serializedData + "&" + $.param(params);
+    }
+
+    var params = {};
+        params["fist_name"] = 'v p';
+        params["email"] = 'test@example.com';
+    serializedData = serializedData + "&" + $.param(params);
+    // make POST ajax call
+    $.ajax({
+        type: 'POST',
+        url: '/login',
+        data: serializedData,
+        success: function(response) {
+            // on successfull creating object
+            // 1. clear the form.
+            $("#friend-form").trigger('reset');
+            // 2. focus to nickname input
+            $("#id_nick_name").focus();
+
+            // display the newly friend to table.
+            var instance = JSON.parse(response["instance"]);
+            var fields = instance[0]["fields"];
+            $("#my_friends tbody").prepend(
+                `<tr>
                     <td>${fields["nick_name"]||""}</td>
                     <td>${fields["first_name"]||""}</td>
                     <td>${fields["last_name"]||""}</td>
@@ -57,12 +72,12 @@ function signInTest(id_token) {
                     <td>${fields["dob"]||""}</td>
                     <td>${fields["lives_in"]||""}</td>
                     </tr>`
-                )
-            },
-            error: function (response) {
-                // alert the error if any error occured
-                alert(response["responseJSON"]["error"]);
-            }
-        })
+            )
+        },
+        error: function(response) {
+            // alert the error if any error occured
+            alert(response["responseJSON"]["error"]);
+        }
+    })
 
 }

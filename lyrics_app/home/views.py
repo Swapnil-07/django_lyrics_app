@@ -19,7 +19,6 @@ def artist(request, id):
     return render(request, "artist.htm", {'artistName':artists[id]})
 
 def login(request):
-    print(request.data);
     google_login.validate(request);
     artists = {1:'Arijit Singh', 2:'Shreya Ghoshal', 3:'Sonu Nigam'}
     return render(request, "artist.htm", {'artistName':artists[id]})
