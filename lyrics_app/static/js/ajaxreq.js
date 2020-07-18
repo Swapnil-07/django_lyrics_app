@@ -1,5 +1,5 @@
 function onSignIn(googleUser) {
-    alert("111");
+    console.log("111");
     // Useful data for your client-side scripts:
 
     var profile = googleUser.getBasicProfile();
@@ -13,7 +13,7 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-//    signInTest(id_token);
+    signInTest(id_token);
 }
 
 
@@ -26,9 +26,9 @@ alert("222");
     });
   }
 
-function signInTest() {
+function signInTest(id_token) {
     // The ID token you need to pass to your backend:
-    var id_token = "token_jwt";
+//    var id_token = "token_jwt";
     console.log("ID Token: " + id_token);
     $('input[name=token_id]').val(id_token);
 
