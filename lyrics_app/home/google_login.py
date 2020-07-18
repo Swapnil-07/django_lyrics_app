@@ -7,7 +7,7 @@ from google.auth.transport import requests
 def validate(request):
     try:
         # Specify the CLIENT_ID of the app that accesses the backend:
-        idinfo = id_token.verify_oauth2_token(token, requests.Request(), '172128405680-q1eoam6svviffit6vo99i9r34knm0kbc.apps.googleusercontent.com')
+        idinfo = id_token.verify_oauth2_token(token, requests.Request(), '172128405680-ke31rqqdi9dgoet6r6r20hc7mjvlsgr1.apps.googleusercontent.com')
 
         # Or, if multiple clients access the backend server:
         # idinfo = id_token.verify_oauth2_token(token, requests.Request())
