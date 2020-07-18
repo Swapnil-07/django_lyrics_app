@@ -6,3 +6,5 @@ if os.environ['IS_DEV'] == 'true':
     from .dev import *
 else:
     from .prod import *
+
+print('>>>>>>>>>'+os.environ['IS_DEV'])
