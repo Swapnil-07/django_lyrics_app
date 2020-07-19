@@ -38,32 +38,4 @@ Reference Links
 
 
 # GCP Keys
-## Local Google Sign-in Keys
-```json
-{
-  "web": {
-    "client_id": "172128405680-q1eoam6svviffit6vo99i9r34knm0kbc.apps.googleusercontent.com",
-    "project_id": "lyrics-app-282817",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_secret": "vXUArCk4LCs0iGnO8NgELAo4"
-  }
-}
-```
-
-## Heroku Google Sign-in Keys
-```json
-{
-  "web": {
-    "client_id": "172128405680-ke31rqqdi9dgoet6r6r20hc7mjvlsgr1.apps.googleusercontent.com",
-    "project_id": "lyrics-app-282817",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_secret": "A8hDbssSqIjtr_hJQCZxXGmy",
-    "redirect_uris": ["https://django-lyrics-app.herokuapp.com"],
-    "javascript_origins": ["https://django-lyrics-app.herokuapp.com"]
-  }
-}
-```
+https://www.notion.so/GCP-Keys-lyrics-app-51aa5878455c4068a7948490831dd157
