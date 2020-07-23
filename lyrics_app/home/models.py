@@ -14,6 +14,9 @@ class Album(models.Model):
     directorName = models.CharField(max_length=250, db_column='director_name')
     imgLocation = models.ImageField(upload_to='static/images', null=True, db_column="img_location")
 
+    def __str__(self):
+        return self.name
+
 class UserRole(models.Model):
     class Meta:
         db_table = 'user_roles'
@@ -29,6 +32,9 @@ class UserRole(models.Model):
         default='collaborator',
         db_column='lable_type'
     )
+
+    def __str__(self):
+        return self.lableType
 
 class Artist(models.Model):
     class Meta:
@@ -48,6 +54,9 @@ class Artist(models.Model):
     )
     description = models.TextField
 
+    def __str__(self):
+        return self.name
+
 class User(models.Model):
     class Meta:
         db_table = 'users'
@@ -57,10 +66,14 @@ class User(models.Model):
     fullName = models.CharField(max_length=250, db_column='full_name')
     roleId = models.ForeignKey(UserRole, blank=True, null=True, on_delete=models.SET_NULL, db_column='role_id')
 
+    def __str__(self):
+        return self.fullName
+
 class Lyric(models.Model):
     class Meta:
         db_table = 'lyrics'
     id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=250)
     userId = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_id')
     albumId = models.ForeignKey(Album, on_delete=models.CASCADE, db_column='album_id')
     musicCompany = models.CharField(max_length=250, db_column='music_company')
@@ -78,7 +91,10 @@ class Lyric(models.Model):
     )
     genere = models.CharField(max_length=250)
     tags = models.CharField(max_length=11)
-    content = models.TextField
+    content = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name
 
 class ArtistSong(models.Model):
     class Meta:
