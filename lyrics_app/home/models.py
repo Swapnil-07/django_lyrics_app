@@ -12,7 +12,7 @@ class Album(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
     directorName = models.CharField(max_length=250, db_column='director_name')
-    imgLocation = models.ImageField(upload_to='static/images', null=True, db_column="img_location")
+    imgLocation = models.ImageField(upload_to='static/images/albums', null=True, db_column="img_location")
 
     def __str__(self):
         return self.name
