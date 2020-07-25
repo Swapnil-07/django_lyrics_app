@@ -7,4 +7,4 @@ if os.environ['IS_DEV'] == 'true':
 else:
     from .prod import *
 
-print('>>>>>>>>>'+os.environ['IS_DEV'])
+print('Env:'+'Dev' if os.environ['IS_DEV'] else 'Prod');
