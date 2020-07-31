@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from . import google_login
 from django.http import HttpResponse
+from home import forms
 # Create your views here.
 
 def home(request):
@@ -19,6 +20,36 @@ def artist(request, id):
     return render(request, "artist.htm", {'artistName':artists[id]})
 
 def login(request):
-    google_login.validate(request);
+    google_login.validate(request)
     artists = {1:'Arijit Singh', 2:'Shreya Ghoshal', 3:'Sonu Nigam'}
     return render(request, "artist.htm", {'artistName':artists[id]})
+
+def postAlbum(request):
+    if request.method == 'POST':
+        formset = forms.AlbumForm(request.POST)
+        if formset.is_valid:
+            print('data validated')
+            formset.save()
+        else:
+            print('data invalid')
+
+    else:
+        print("direct Form")
+        formset = forms.AlbumForm()
+    return render(request, 'post-album.htm', {'formset': formset})
+
+def createUser(request):
+    if request.method == 'POST':
+        formset = forms.UserForm(request.POST)
+        if formset.is_valid:
+            try:
+                formset.save()
+            except:
+                pass
+        else:
+            print('>>>> Data Invalid')
+
+    else:
+        print("direct Form")
+        formset = forms.UserForm()
+    return render(request, 'create-user.htm', {'formset': formset})

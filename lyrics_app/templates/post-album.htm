@@ -1,0 +1,25 @@
+{% extends 'base.htm' %}
+{% block title%} Lyrics - Best Application {% endblock %}
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+
+<div  class="text-center my-4">
+    <h3>Fill Album Details</h3>
+    <hr>
+    <div class="col-sm-10">
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            <p>
+                {{ formset.as_p}}
+            </p>
+            <button type="submit" class="save btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

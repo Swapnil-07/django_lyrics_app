@@ -45,7 +45,7 @@ class Artist(models.Model):
     ARTIST_TYPE_CHOICES = [
         ('singer', 'Singer'),
         ('writer', 'Writer'),
-        ('composer', 'Conposer'),
+        ('composer', 'Composer'),
     ]
     artistType = models.CharField(
         max_length=50,
@@ -96,6 +96,7 @@ class Lyric(models.Model):
     def __str__(self):
         return self.name
 
+
 class ArtistSong(models.Model):
     class Meta:
         db_table = 'artist_songs'
@@ -121,4 +122,4 @@ class LyricEvent(models.Model):
     )
     ocurredAt = models.DateTimeField(db_column='ocurred_at')
     userEmail =  models.CharField(max_length=100, db_column='user_email')
-    content = models.TextField
+    content = models.TextField()
