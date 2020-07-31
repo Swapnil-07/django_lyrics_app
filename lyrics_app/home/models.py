@@ -12,7 +12,7 @@ class Album(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
     directorName = models.CharField(max_length=250, db_column='director_name')
-    imgLocation = models.ImageField(upload_to='static/images', null=True, db_column="img_location")
+    imgLocation = models.ImageField(upload_to='static/images/albums', null=True, db_column="img_location")
 
     def __str__(self):
         return self.name
@@ -41,7 +41,7 @@ class Artist(models.Model):
         db_table = 'artists'
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=250)
-    imgLocation = models.ImageField(upload_to='static/images', null=True, db_column="img_location")
+    imgLocation = models.ImageField(upload_to='static/images/artists', null=True, db_column="img_location")
     ARTIST_TYPE_CHOICES = [
         ('singer', 'Singer'),
         ('writer', 'Writer'),
@@ -73,7 +73,7 @@ class Lyric(models.Model):
     class Meta:
         db_table = 'lyrics'
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=250)
+    title = models.CharField(max_length=250)
     userId = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_id')
     albumId = models.ForeignKey(Album, on_delete=models.CASCADE, db_column='album_id')
     musicCompany = models.CharField(max_length=250, db_column='music_company')
@@ -94,7 +94,7 @@ class Lyric(models.Model):
     content = models.TextField(blank=True)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class ArtistSong(models.Model):
